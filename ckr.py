@@ -14,7 +14,6 @@ SESSION_STRING = os.getenv("SESSION_STRING")
 MY_ID = 5162551291
 
 
-SESSION_STRING ="1BVtsOKQBu2sLHcbFgd4L53AijwcAbY-2zDaAi6Dkb1SsFPK9x91kLRLN9wWwdWk8FKb7erf8fCvXk98iLzqtutlVAVB6d24JpG0DI6BSsGqibofhiIpwx6vcrrOPX7My53vhd01MOGvIHjOrdSgkb2uy5lnCUu8ohH3HqOvOGHvkMAQMRxsdZEGxZsYqU2cg0QBgaOaHAddRjO9ft9g8Exx0GuI1u33PK3AnogkNUnACQ3WAzPOMlHn6Wsd4zlbUb1BQIA5YUSf9LA7v39tlmTSMFNKRWmKAV_vgmmEWsHS-_Dso5FBDb5ZcEdJoosVMpFwtyp1v6hoTlPHjSJsFDDt5B3z6eXg="# ================= CLIENTS =================
 client_monitor = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
 bot = TelegramClient("SESSION_STRING", API_ID, API_HASH)
 
