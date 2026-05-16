@@ -27,11 +27,25 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run bot
+      - name: Run bot with auto restart
         env:
           API_ID: ${{ secrets.API_ID }}
           API_HASH: ${{ secrets.API_HASH }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           SESSION_STRING: ${{ secrets.SESSION_STRING }}
         run: |
-          python ckr.py
+          echo "✅ Bot runner started with auto-restart system"
+
+          END_TIME=$((SECONDS + 29400))
+
+          while [ $SECONDS -lt $END_TIME ]; do
+            echo "🚀 Starting bot..."
+            python ckr.py
+            EXIT_CODE=$?
+
+            echo "⚠️ Bot stopped/crashed with exit code: $EXIT_CODE"
+            echo "⏳ Waiting 30 seconds before restart..."
+            sleep 30
+          done
+
+          echo "✅ 4h 55m completed. Workflow will stop safely."
